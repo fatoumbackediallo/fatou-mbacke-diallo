@@ -1,52 +1,104 @@
-.body {
-  font-family: "Open Sans", sans-serif;
+/* Reset CSS */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
   background-color: #f4f7f6;
   color: #333;
+  line-height: 1.6;
 }
 
-.header {
-  background-color: #2d6a4f;
+/* Header */
+header {
+  background-color: #003d55;
   color: white;
-  padding: 20px 0;
+  padding: 40px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+header h1 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+  animation: slideIn 1s ease-out;
 }
 
-.header p {
-  font-size: 1.2rem;
+header p {
+  font-size: 1.4rem;
+  animation: fadeIn 2s ease-out;
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .cta-button {
+  display: inline-block;
   margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #40916c;
+  padding: 15px 30px;
+  background-color: #9ec11a;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
+
 .cta-button:hover {
-  background-color: #1b4332;
+  background-color: #7da017;
+  transform: scale(1.05);
 }
+
+/* Section styling */
 .section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
+
 .section h2 {
-  font-size: 2rem;
-  color: #1b4332;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #003d55;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background-color: #9ec11a;
+  margin: 10px auto 0;
 }
 
 .section p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: #666;
   margin-bottom: 20px;
 }
 
+/* Services and Process Sections */
 .services,
 .process {
   display: flex;
@@ -58,19 +110,34 @@
 .process-item {
   width: 45%;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px;
   margin: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #9ec11a;
 }
 
-.footer {
-  background-color: #2d6a4f;
+.service-item:hover,
+.process-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #003d55;
   color: white;
-  padding: 20px 0;
+  padding: 30px 20px;
   text-align: center;
 }
 
-.footer a {
-  color: #ffffff;
+footer a {
+  color: #9ec11a;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #7da017;
 }
